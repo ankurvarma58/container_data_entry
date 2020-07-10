@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html>
+
+<title>BVM Project</title>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css'>
+<link rel='stylesheet' href='styles/style.css'>
+
+
+<body style="background: #ADD8E6"><br>
+    <h1 style="font-family: serif;text-align: center;">BVM Engineering College Project EC Dept.</h1><br>
+
+    <div style="text-align: center" class="boxb">
+        <div class="boxs">
+            <h3 style="font-family: serif">Container Data Entry</h3><br>
+  <form class="gform pure-form pure-form-stacked" method="POST" data-email="example@email.net"
+  action="https://script.google.com/macros/s/AKfycbz487hmoHUJzOoXcMz8zZ0soBRCpZUQTnY5fHiH/exec">
+
+    <div class="form-elements">
+        <input type="text" id="customer_name" name="customer_name" placeholder="Customer name..">
+
+                    <input type="text" id="from" name="from" placeholder="From..">
+
+                    <input type="text" id="to" name="to" placeholder="TO..">
+
+                    <select id="country" name="country">
+                        <option value="Not Selected">Select Country</option>
+                        <option value="India">India</option>
+                        <option value="Australia">Australia</option>
+                        <option value="canada">Canada</option>
+                        <option value="USA">USA</option>
+                    </select>
+
+                    <input type="text" id="tracking_id" name="tracking_id" placeholder="Tracking ID..">
+
+
+                    <button type="submit" class="btn btn-primary btn-lg " id="load1" data-loading-text="<i class='fa fa-circle-o-notch fa-spin'></i> Processing" style="border: 0px; box-shadow: 0 8px 12px 0 rgba(0, 0, 0, 0.1), 0 6px 20px 0 rgba(0, 0, 0, 0.19);">Submit</button>
+
+                    <script src='https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+                    <script src='https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/3.2.0/js/bootstrap.min.js'></script>
+                    <script>
+                        $('.btn').on('click', function() {
+                            var $this = $(this);
+                            $this.button('loading');
+                            setTimeout(function() {
+                                $this.button('reset');
+                            }, 6000);
+                        });
+                    </script>
+    </div>
+
+    <div class="thankyou_message" style="display:none;"><br><br><br><br>
+      <h2><em>Container</em> data recorded</h2>
+    </div>
+
+  </form>
+
+  <script data-cfasync="false" type="text/javascript"
+  src="scripts/form-submission-handler.js"></script>
+        </div>
+        <img src="images/cointainer.png" alt="cointainer" width="600" height="350">
+    </div>
+    <div class="footer">
+        <p>hosted by <a href="https://github.com/ankurvarma58" target="_blank">github</a></p>
+    </div>
+</body>
+
+</html>
