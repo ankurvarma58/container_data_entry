@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html>
+<title>BVM Project</title>
+<link rel="icon" href="images/logo.png"/>
+<link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.2.0/css/bootstrap.min.css'>
+<link rel='stylesheet' href='https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.1.0/css/font-awesome.min.css'>
+<link rel='stylesheet' href='styles/style.css'>
+
+
+<body style="background: #ADD8E6" onload="init()"><br>
+    <h1 style="font-family: serif;text-align: center;">BVM Engineering College Project EC Dept.</h1><br>
+    
+    <div style="text-align: center" class="boxt">
+        
+        <div class="container text-center my-4">
+
+    <p class="font-weight-bold">Cointainer Tracker</p>
+
+    <a class="btn btn-primary mb-4" href="https://docs.google.com/spreadsheets/d/1er8m-1mcXbRe7Ywy9f6ZC4yUDM3jpnW5DVF7lylXV_Y/edit?usp=sharing" role="button" target="_blank">Admin Database</a>
+            <a class="btn btn-primary mb-4" href="https://docs.google.com/spreadsheets/d/1nOmqSwOpf_cZQg_eeRQMvYX1YX9v4WKCTAFKv8pa2x4/edit?usp=sharing" role="button" target="_blank">Track Database</a>
+<p><br></p>
+    <!-- Table  -->
+    <table class="table table bordered table-striped" id="testTable" style="background: #fff">
+      <!-- Table head -->
+      <thead>
+        <tr>
+          <th>Tracking-ID</th>
+          <th>Customer Name</th>
+             <th>Delivery Status</th>
+            <th>Transit A</th>
+            <th>Transit B</th>
+            <th>Transit C</th>
+        </tr>
+      </thead>
+      <!-- Table head -->
+
+      <!-- Table body -->
+      <tbody id="demo">
+
+      
+      </tbody>
+      <!-- Table body -->
+    </table>
+    <!-- Table  -->
+
+  </div>
+        
+    <!-- SCRIPTS -->
+    <!-- JQuery -->
+    <script type="text/javascript" src="js/jquery-3.3.1.min.js"></script>
+    <!-- Bootstrap tooltips -->
+    <script type="text/javascript" src="js/popper.min.js"></script>
+    <!-- Bootstrap core JavaScript -->
+    <script type="text/javascript" src="js/bootstrap.min.js"></script>
+    <!-- MDB core JavaScript -->
+    <script type="text/javascript" src="js/mdb.min.js"></script>
+        
+        <script type="text/javascript">
+       /* https://docs.google.com/spreadsheets/feeds/list/1nOmqSwOpf_cZQg_eeRQMvYX1YX9v4WKCTAFKv8pa2x4/edit#gid=0*/
+            $.getJSON("https://spreadsheets.google.com/feeds/list/1nOmqSwOpf_cZQg_eeRQMvYX1YX9v4WKCTAFKv8pa2x4/od6/public/values?alt=json", function (data) {
+
+      var sheetData = data.feed.entry;
+
+      var i;
+      for (i = 0; i < sheetData.length; i++) {
+
+        var tid = data.feed.entry[i]['gsx$_cn6ca']['$t'];
+        var name = data.feed.entry[i]['gsx$_cokwr']['$t'];
+        var to = data.feed.entry[i]['gsx$_cpzh4']['$t'];
+          var tr1 = data.feed.entry[i]['gsx$_cre1l']['$t'];
+          var tr2 = data.feed.entry[i]['gsx$_chk2m']['$t'];
+          var tr3 = data.feed.entry[i]['gsx$_ciyn3']['$t'];
+
+        document.getElementById('demo').innerHTML += ('<tr>'+'<td>'+tid+'</td>'+'<td>'+name+'</td>'+'<td>'+to+'</td>'+'<td>'+tr1+'</td>'+'<td>'+tr2+'</td>'+'<td>'+tr3+'</td>'+'<tr>');
+
+      }
+    });
+
+            
+        </script>
+    
+    </div>
+    <div class="footer">
+        <p>hosted by <a href="https://github.com/ankurvarma58" target="_blank">github</a></p>
+    </div>
+    
+</body>
+
+</html>
